@@ -3,6 +3,7 @@ import "./layouts.scss"
 import NavBar from "./navBar"
 import FlagBarLayout from "./flagBarLayout"
 import Helmet from "react-helmet"
+import { Link } from "gatsby"
 
 export default function AllPageLayout(props) {
     const [thisWindow, setThisWindow] = useState(null)
@@ -21,6 +22,7 @@ export default function AllPageLayout(props) {
                 <meta name="description" content="Keep your company's client notes organized and easy to access" />
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
             </Helmet>
+            <div class="container-fluid">
             <div class="row nav-text bgCustomDark heading">
                 <h1 class="nav-text">Client-Note App</h1>
             </div>
@@ -28,7 +30,6 @@ export default function AllPageLayout(props) {
                 <p class="nav-text">Keep track of important details for clients and their projects</p>
             </div>
             <NavBar></NavBar>
-
             <div class="row">
                 <div class="col-md-3 col-lg-2">
                     {(thisWindow !== null) && <FlagBarLayout location={thisWindow.location}></FlagBarLayout>}
@@ -40,7 +41,8 @@ export default function AllPageLayout(props) {
                 </div>
                 <div class="col-md-1 col-lg-1">
                 </div>
-            </div>
+                </div>
+                </div>
         </>
     )
 }
